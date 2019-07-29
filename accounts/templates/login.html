@@ -13,6 +13,11 @@
                 <li><a href="#">Profile</a></li>
             </ul>
         </nav>
+        <form method='POST'>
+            {% csrf_token %}
+            {{ login_form }}
+            <button type='submit'>Login</button>
+        </form>
         <div>
             {% if messages %}
                 {% for message in messages %}
@@ -20,8 +25,5 @@
                 {% endfor %}
             {% endif %}
         </div>
-        <form method='POST'>
-            {{ login_form }}
-        </form>
     </body>
 </html>
